@@ -1271,6 +1271,7 @@ public final class CraftServer implements Server {
 
     public Inventory createInventory(InventoryHolder owner, int size, String title) throws IllegalArgumentException {
         Validate.isTrue(size % 9 == 0, "Chests must have a size that is a multiple of 9!");
+        Validate.isTrue(title.length() <= 32, "Inventory titles must not exceed 32 characters");
         return new CraftInventoryCustom(owner, size, title);
     }
 
