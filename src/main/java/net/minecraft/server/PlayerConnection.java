@@ -1467,8 +1467,9 @@ public class PlayerConnection extends Connection {
             // CraftBukkit start - Call click event
             if (flag || (flag1 && !ItemStack.matches(this.player.defaultContainer.getSlot(packet107setcreativeslot.slot).getItem(), packet107setcreativeslot.b))) { // Insist on valid slot
 
-                org.bukkit.entity.HumanEntity player = this.player.getBukkitEntity();
-                InventoryView inventory = new CraftInventoryView(player, player.getInventory(), this.player.defaultContainer);
+                //org.bukkit.entity.HumanEntity player = this.player.getBukkitEntity();
+                //InventoryView inventory = new CraftInventoryView(player, player.getInventory(), this.player.defaultContainer);
+                InventoryView inventory = this.player.activeContainer.getBukkitView();
                 org.bukkit.inventory.ItemStack item = CraftItemStack.asBukkitCopy(packet107setcreativeslot.b); // Should be packet107setcreativeslot.newitem
 
                 SlotType type = SlotType.QUICKBAR;
